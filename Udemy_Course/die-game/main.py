@@ -34,10 +34,10 @@ class Player:
     def counter(self):
        return self._counter
     
-    def increament_counter(self):
+    def increment_counter(self):
         self._counter += 1
 
-    def decreament_counter(self):
+    def decrement_counter(self):
         self._counter -= 1
 
     def roll_die(self):
@@ -45,3 +45,55 @@ class Player:
     
 
 
+class DiceGame:
+   
+    def __init__(self, player, computer):
+        self._player = player
+        self._computer = computer
+
+    def play(self):
+        print("==================================")
+        print(" Welcome to Roll the Dice!")
+        print("==================================")
+        while True:
+           self.play_round()
+           # TODO: implement game over
+
+    def play_round(self):
+        # Welcome the user
+        print("------ New Round ------")
+        input("Press any key to roll the dice.")
+
+        player_value = self._player.roll_die()
+        computer_value = self._computer.roll_die()
+
+        # Show the values
+        print(f"your die: {player_value}")
+        print(f"Computer die: {computer_value}")
+
+        # Determine winner and loser
+        if player_value > computer_value:
+           print("You won the round! ")
+           self._player.decrement_counter() #Winner
+           self._computer.increment_counter() #Loser
+        elif computer_value > player_value:
+           print("The computer won this round. Try again.")
+           self._computer.decrement_counter() #Winner
+           self._player.increment_counter() #Loser
+        else:
+           print("It's a tie!")
+
+        print(f"Your counter: {self._player.counter}")
+        print(f"Computer counter: {self._computer.counter}")
+           
+player_die = Die()
+computer_die = Die()
+
+my_player = Player(player_die, is_computer=False)
+computer_player = Player(computer_die, is_computer=True)
+
+game = DiceGame(my_player, computer_player)
+
+# Start the game
+game.play()
+    
