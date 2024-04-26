@@ -88,19 +88,19 @@ class DiceGame:
         
     
     def print_round_welcome(self):
-        print("------ New Round ------")
+        print("\n------ New Round ------")
         input("Press any key to roll the dice.")
 
     def show_dice(self, player_value, computer_value):
         print(f"your die: {player_value}")
-        print(f"Computer die: {computer_value}")
+        print(f"Computer die: {computer_value}\n")
 
     def update_counters(self, winner, loser):
        winner.decrement_counter()
        loser.increment_counter()
 
     def show_counters(self):
-        print(f"Your counter: {self._player.counter}")
+        print(f"\nYour counter: {self._player.counter}")
         print(f"Computer counter: {self._computer.counter}")
 
     def check_game_over(self):
