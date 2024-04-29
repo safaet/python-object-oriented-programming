@@ -10,7 +10,7 @@ class Player:
         self._is_human = is_human
 
         if is_human:
-            self.marker = Player.PLAYER_MARKER
+            self._marker = Player.PLAYER_MARKER
 
         else:
             self._marker = Player.COMPUTER_MARKER
@@ -46,3 +46,8 @@ class Player:
         print("Computer move (1-9): ", move.value)
         return move
     
+
+player = Player(False)  # Human player
+
+move = player.get_move()
+print(move.value)

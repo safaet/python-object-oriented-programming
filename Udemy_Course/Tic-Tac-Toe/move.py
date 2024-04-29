@@ -33,4 +33,4 @@ class Move:
 # row 2: | 7 | 8 | 9 |
 
 move = Move(6)
-print(move.get_row())
+# print(move.get_row())
