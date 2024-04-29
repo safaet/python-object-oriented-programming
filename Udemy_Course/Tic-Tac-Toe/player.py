@@ -1,3 +1,4 @@
+import random
 from move import Move
 
 class Player:
@@ -38,3 +39,10 @@ class Player:
             else:
                 print("Please enter an integer between 1 and 9.")
         return move
+    
+    def get_computer_move(self):
+        random_choice = random.choice(list(range(1, 10)))
+        move = Move(random_choice)
+        print("Computer move (1-9): ", move.value)
+        return move
+    
