@@ -38,3 +38,43 @@ class Board:
             print("This position is already taken. Please enter another one.")
 
 
+    def check_is_game_over(self, player, last_move):
+        return ((self.check_row(player, last_move))
+                or (self.check_column(player, last_move))
+                or (self.check_diagonal(player))
+                or (self.check_antidiagonal(player)))
+    
+    def check_row(self, player, last_move):
+        row_index = last_move.get_row()
+        board_row = self.game_board[row_index]  # ["0", 0 "X"]
+
+        return board_row.count(player.marker) == 3
+    
+    def check_column(self, player, last_move):
+        markers_count = 0
+        column_index = last_move.get_column()
+
+        for i in range(3):
+            if self.game_board[i][column_index] == player.marker:
+                markers_count += 1
+
+        return markers_count == 3
+    
+    def check_diagonal(self, player):
+        markers_count = 0
+        for i in range(3):  # 0, 1, 2
+            if self.game_board[i][i] == player.marker:
+                markers_count += 1
+
+        return markers_count == 3
+    
+    def check_antidiagonal(self, player):
+        markers_count = 0
+
+        for i in range(3):
+            if self.game_board[i][2-i] == player.marker:
+                markers_count += 1
+
+        return markers_count == 3
+        
+    
