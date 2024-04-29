@@ -27,6 +27,14 @@ class Board:
     def print_board_with_positions(self):
         print("| 1 | 2 | 3 |\n| 4 | 5 | 6 |\n| 7 | 8 | 9 |")
 
+    def submit_move(self, player, move):
+        row = move.get_row()
+        col = move.get_column()
+        value = self.game_board[row][col]
 
-board = Board()
-board.print_board()
+        if value == Board.EMPTY_CELL:
+            self.game_board[row][col] = player.marker
+        else:
+            print("This position is already taken. Please enter another one.")
+
+
