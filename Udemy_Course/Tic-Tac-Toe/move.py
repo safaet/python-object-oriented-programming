@@ -26,3 +26,11 @@ class Move:
             return 1  # Second column
         else:
             return 2  # Third column
+
+#       col0 col1 col2      
+# row 0: | 1 | 2 | 3 |
+# row 1: | 4 | 5 | 6 |
+# row 2: | 7 | 8 | 9 |
+
+move = Move(6)
+print(move.get_row())
