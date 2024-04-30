@@ -1,4 +1,5 @@
-
+from player import Player
+from move import Move
 class Board:
     
     EMPTY_CELL = 0
@@ -90,3 +91,21 @@ class Board:
         self.game_board = [[0, 0, 0], 
                            [0, 0, 0], 
                            [0, 0, 0]]
+        
+
+board = Board()
+player = Player()
+move1 = player.get_move()
+move2 = player.get_move()
+
+
+board.print_board()  # Initially empty
+
+board.submit_move(player, move1)
+board.submit_move(player, move2)
+
+board.print_board()  # Two markers
+
+board.reset_board()
+
+board.print_board()  # Should be empty
