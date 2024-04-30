@@ -32,5 +32,5 @@ class Move:
 # row 1: | 4 | 5 | 6 |
 # row 2: | 7 | 8 | 9 |
 
-move = Move(6)
+
 # print(move.get_row())

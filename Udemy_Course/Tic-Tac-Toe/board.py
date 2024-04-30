@@ -1,3 +1,5 @@
+from move import Move
+from player import Player
 class Board:
     
     EMPTY_CELL = 0
@@ -78,3 +80,20 @@ class Board:
         return markers_count == 3
         
     
+
+board = Board()
+player = Player()
+
+board.print_board()
+
+move1 = player.get_move()
+move2 = player.get_move()
+move3 = player.get_move()
+
+
+board.submit_move(player, move1)
+board.submit_move(player, move2)
+board.submit_move(player, move3)
+
+board.print_board()
+print(board.check_is_game_over(player, move3))

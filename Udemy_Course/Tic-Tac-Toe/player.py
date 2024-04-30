@@ -47,7 +47,3 @@ class Player:
         return move
     
 
-player = Player(False)  # Human player
-
-move = player.get_move()
-print(move.value)
