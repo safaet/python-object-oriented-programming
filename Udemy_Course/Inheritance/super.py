@@ -13,8 +13,8 @@ class Poodle(Dog):
 
 
 # This line:
-super().__init__(name, ager)
+#super().__init__(name, ager)
 
 # Is equivalent to the syntax that you learned:
 
-Dog.__init__(self, name, age)
+#Dog.__init__(self, name, age)
