@@ -4,10 +4,11 @@ By: Estefania Cassingena Navone
 """
 
 class Circle:
+    pass
 
-    def __init__(self, radius=5, color): # This throws an error
-        self.radius = radius
-        self.color = color
+    # def __init__(self, radius=5, color): # This throws an error
+    #     self.radius = radius
+    #     self.color = color
 
 
 my_circle = Circle(7, "Blue")
