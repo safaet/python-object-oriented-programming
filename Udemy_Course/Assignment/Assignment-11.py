@@ -8,7 +8,7 @@ class ElectronicDevice:
 class TV(ElectronicDevice):
     
     def __init__(self, voltage, weight, height, color, max_num_channels):
-        ElectronicDevice.__init__(voltage, weight, height, color)
+        ElectronicDevice.__init__(self, voltage, weight, height, color)
         # Or we can write bellow code
         # super().__init__(voltage, weight, height, color) 
         self.max_num_channels = max_num_channels
