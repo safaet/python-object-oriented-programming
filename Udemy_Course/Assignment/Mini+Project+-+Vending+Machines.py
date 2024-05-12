@@ -120,43 +120,35 @@ class VendingMachine:
  
 class HospitalVendingMachine(VendingMachine):
 
-    print("Welcome to our Hospital Vending Machine")
-    print("We hope you are feeling better today!")
- 
-    def __init__(self,snack_prices, inventory, serial, days_until_maintenance):
-        super().__init__(inventory, serial, days_until_maintenance)
-        self.snack_prices = snack_prices
+    snack_prices = {"candy": 1.00, "soda": 0.50, "chips": 2.00, "cookies": 1.50}
 
     def seles_menu(self):
-        return super().sales_menu()
+        print("\n=========== Welcome to our Hospital Vending Machine =============\nWe hope you are feeling better today!\n")
+        VendingMachine.sales_menu(self)
     
     def find_snack_price(self, snack):
-        return super().find_snack_price(snack)
+        return HospitalVendingMachine.snack_prices[snack]
     
     def print_days_until_maintenance(self):
-        print(self.days_until_maintenance)
+        print("I have %d days until maintenance, thanks for asking." % self.days_until_maintenance)
  
         
  
 class SchoolVendingMachine(VendingMachine):
 
-    print("Welcome to our School Vending Machine")
-    print("We hope you have a great day full of learning!")
+    snack_prices = {"candy": 3.20, "soda": 2.50, "chips": 1.10, "cookies": 8.00}
 
-    student_debt = {}
- 
-    def __init__(self,snack_prices, inventory, serial, days_until_maintenance):
-        super().__init__(inventory, serial, days_until_maintenance)
-        self.snack_prices = snack_prices
+    student_debt = {"Lulu": 500, "Gino": 100, "Penelope": 150}
 
     def sales_menu(self):
-        return super().sales_menu()
+        print("\n=============== Welcome to our School Vending Machine =============\nWe hope you have a great day full of learning!\n")
+        VendingMachine.sales_menu(self)
     
     def find_snack_price(self, snack):
-        return super().find_snack_price(snack)
+        return SchoolVendingMachine.snack_prices[snack]
     
-    def print_student_debt():
-        pass
+    def print_student_debt(self, student):
+        print("The debt of %s with this vending machine is: $%d" % (student, SchoolVendingMachine.student_debt[student.capitalize()]))
  
  
 # Instances
