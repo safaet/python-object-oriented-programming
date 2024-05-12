@@ -119,16 +119,44 @@ class VendingMachine:
 # Subclasses
  
 class HospitalVendingMachine(VendingMachine):
+
+    print("Welcome to our Hospital Vending Machine")
+    print("We hope you are feeling better today!")
  
-    def __init__(self, inventory, serial, days_until_maintenance):
+    def __init__(self,snack_prices, inventory, serial, days_until_maintenance):
         super().__init__(inventory, serial, days_until_maintenance)
+        self.snack_prices = snack_prices
+
+    def seles_menu(self):
+        return super().sales_menu()
+    
+    def find_snack_price(self, snack):
+        return super().find_snack_price(snack)
+    
+    def print_days_until_maintenance(self):
+        print(self.days_until_maintenance)
  
         
  
 class SchoolVendingMachine(VendingMachine):
+
+    print("Welcome to our School Vending Machine")
+    print("We hope you have a great day full of learning!")
+
+    student_debt = {}
  
-    def __init__(self, inventory, serial, days_until_maintenance):
+    def __init__(self,snack_prices, inventory, serial, days_until_maintenance):
         super().__init__(inventory, serial, days_until_maintenance)
+        self.snack_prices = snack_prices
+
+    def sales_menu(self):
+        return super().sales_menu()
+    
+    def find_snack_price(self, snack):
+        return super().find_snack_price(snack)
+    
+    def print_student_debt():
+        pass
  
  
 # Instances
