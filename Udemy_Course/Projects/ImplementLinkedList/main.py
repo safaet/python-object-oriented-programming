@@ -1,8 +1,8 @@
-from node import Node
+from linked_list import LinkedList
 
-node_2 = Node(3)
-node_1 = Node(5, node_2)
+my_linked_list = LinkedList()
 
-# node_1 -> node_2
+my_linked_list.insert_node(9)
+my_linked_list.insert_node(3)
 
-print(node_1.next is node_2)
+print(my_linked_list.head.value)
