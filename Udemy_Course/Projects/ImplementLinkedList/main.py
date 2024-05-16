@@ -4,5 +4,11 @@ my_linked_list = LinkedList()
 
 my_linked_list.insert_node(9)
 my_linked_list.insert_node(3)
+my_linked_list.insert_node(6)
+my_linked_list.insert_node(2)
 
-print(my_linked_list.head.value)
+# 1st: 9
+# 2nd: 3 -> 9
+# 3rd: 3 -> 6 -> 9
+
+print(my_linked_list.head.next.next.next.value)
