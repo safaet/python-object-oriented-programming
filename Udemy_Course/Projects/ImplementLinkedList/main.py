@@ -10,6 +10,6 @@ my_linked_list.insert_node(15)
 # 1st: 9
 # 2nd: 3 -> 9
 # 3rd: 3 -> 6 -> 9
-# 4th: 3 -> 6 -> 9 -> 15
+# 4th: 3 -> 6 -> 9 -> 15f
 
-print(my_linked_list.head.next.next.next.value)
+my_linked_list.print_list_items()
