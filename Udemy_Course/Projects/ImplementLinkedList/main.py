@@ -12,8 +12,5 @@ my_linked_list.insert_node(15)
 # 3rd: 3 -> 6 -> 9
 # 4th: 3 -> 6 -> 9 -> 15
 
-print(my_linked_list.count_nodes())
 
-my_linked_list.insert_node(0)
-
-print(my_linked_list.count_nodes())
+print(my_linked_list.count_nodes(my_linked_list.head))
