@@ -50,9 +50,18 @@ class LinkedList:
     '''
 
 # Recursive Way
+    '''
     def count_nodes(self, node):
         if node is None:
             return 0
         else:
             return 1 + self.count_nodes(node.next)
+    '''
+    def count_nodes(self):
+        return self.count_nodes_recursive(self.head)
+    def count_nodes_recursive(self, node):
+        if node is None:
+            return 0
+        else:
+            return 1 + self.count_nodes_recursive(node.next)
         
