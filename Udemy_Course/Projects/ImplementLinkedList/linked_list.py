@@ -80,4 +80,20 @@ class LinkedList:
         elif self.head.value == target_value:
             self.head = self.head.next
             return True
+        else:
+            previous = self.head
+            runner = self.head.next
+
+            while(runner is not None) and (target_value > runner.value):
+                previous = runner
+                runner = runner.next
+
+            if (runner is not None) and (runner.value == target_value):
+                # Previous will now point to the node
+                # that comes after the runner node
+                previous.next = runner.next #Bridge
+                return True
+            else:
+                return False
+
         
