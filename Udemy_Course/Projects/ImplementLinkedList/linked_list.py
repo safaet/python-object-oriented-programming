@@ -33,3 +33,13 @@ class LinkedList:
                 print(runner.value, end=" ")
                 runner = runner.next
             print()
+
+    def count_nodes(self):
+        count = 0
+        runner = self.head
+
+        while runner is not None:
+            count += 1
+            runner = runner.next
+
+        return count
